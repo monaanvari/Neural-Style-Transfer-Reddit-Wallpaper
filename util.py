@@ -14,8 +14,7 @@ def verifySubreddit(sub):
 def getSubreddits():
     print('\nWELOCME!\n')
     print('This program performs neural style transfer to compose an image from one of your favorite '+
-            'subreddits in the style of an image from a different subreddit to create unique wallpapers.'+ 
-            '\nPress any key to quit.\n')
+            'subreddits in the style of an image from a different subreddit to create unique wallpapers.\n')
     sub1=''
     sub2 = ''
     while True:    

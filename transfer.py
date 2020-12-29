@@ -190,10 +190,12 @@ def transfer(mainImageUrl, styleImageUrl):
     mpl.rcParams['figure.figsize'] = (12,12)
     mpl.rcParams['axes.grid'] = False
 
-    opt = tf.optimizers.Adam(learning_rate=0.02, beta_1=0.99, epsilon=1e-1)
-
-    os.remove(home+'/.keras/datasets/NeuralStyleTransferMain')
-    os.remove(home+'/.keras/datasets/NeuralStyleTransferStyle')
+    opt = tf.optimizers.Adam(learning_rate=0.006, beta_1=0.99, epsilon=1e-1)
+    try:
+        os.remove(home+'/.keras/datasets/NeuralStyleTransferMain')
+        os.remove(home+'/.keras/datasets/NeuralStyleTransferStyle')
+    except:
+        pass
 
     content_path = tf.keras.utils.get_file('NeuralStyleTransferMain', mainImageUrl)
     style_path = tf.keras.utils.get_file('NeuralStyleTransferStyle',styleImageUrl)
@@ -210,7 +212,7 @@ def transfer(mainImageUrl, styleImageUrl):
     # printVggLayers(style_layers, style_output)
     # printModelOutputDetails(model, image)
 
-    model.train(image, 10, 100, opt)
+    model.train(image, 10, 300, opt)
 
 
     plt.subplot(2, 2, 1)

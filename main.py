@@ -30,8 +30,7 @@ if __name__== '__main__':
     mainImage = Image.open(urllib.request.urlopen(mainImageURL))
     styleImage = Image.open(urllib.request.urlopen(styleImageURL))
 
-    #image = transfer.transfer(mainImageURL, styleImageURL)
-    image = transfer.transfer('https://i.pinimg.com/564x/ea/97/1a/ea971a1fb6df648975ca6a75c295087e.jpg', 'https://external-preview.redd.it/tE3IBYh4f73AILcPgOUi8RjHg9zHO_YSNewhlqTTUI8.jpg?width=640&crop=smart&auto=webp&s=8af196092868ec0c19440a8dda6ace7fb8b65907')
+    image = transfer.transfer(mainImageURL, styleImageURL)
 
     filename = home+"/styledImage.jpg"
 
